@@ -153,10 +153,11 @@ Locate `main.zip`, open **DGHub → Plugin Center → External Plugins → Impor
 
 **已验证兼容游戏**
 
-| 游戏 | 进程名 |
-| :--- | :--- |
-| 星际拓荒 (Outer Wilds) | `OuterWilds.exe` |
-| 死亡搁浅 导演剪辑版 | `ds.exe` |
+| 游戏 | 进程名 | 适配程度 |   
+| :--- | :--- | :--- |   
+| 星际拓荒 (Outer Wilds) | `OuterWilds.exe` | 完美 |   
+| 死亡搁浅 导演剪辑版 | `ds.exe` | 一般：DGHUB后台运行时插件可能被杀后台 |   
+| 怪物猎人：崛起 |`MonsterHunterRise.exe` | 完美 |  
 
 **无效果排查清单**
 - [ ] 进程名是否填写正确
@@ -172,10 +173,11 @@ In theory, any game that drives rumble via XInput is supported. Real-world compa
 
 **Verified Games**
 
-| Game | Process |
-| :--- | :--- |
-| Outer Wilds | `OuterWilds.exe` |
-| Death Stranding Director's Cut | `ds.exe` |
+| Game | Process | effect |  
+| :--- | :--- | :---|  
+| Outer Wilds | `OuterWilds.exe` | prefect |  
+| Death Stranding Director's Cut | `ds.exe` | normal |   
+| Monster Hunter Rise | `MonsterHunterRise.exe`  | prefect |   
 
 **Troubleshooting**
 - [ ] Process name is correct
