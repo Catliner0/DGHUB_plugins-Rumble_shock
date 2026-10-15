@@ -7,13 +7,13 @@
 
 ---  
 <a id="top"></a>   
-## 📑目录
+## 📑  目录
 [插件简介](#about)  
 [兼容性说明](#compatibility)  
 [更新日志](#changelog)  
 <h4 id="about"></h4>  
 
-## 📖插件简介  
+## 📖  插件简介  
 
 本插件会挂钩游戏进程中的 `XInputSetState`，实时获取左右马达震动强度，并按你配置的规则映射为电击强度与波形，通过 DGHub 发送给已连接的 DG-Lab 设备  
 ### 🛠️ 前置软件  
@@ -22,18 +22,23 @@
 | **DGHub** | 插件运行与设备控制中枢 | [下载](http://www.dghub.top/) |  
 | **DG-Lab** | 官方设备与生态 | [下载](https://dungeon-lab.cn/) |  
 
----
+[返回目录](#top) 
+---  
 
+## 🧩 兼容性说明  
 <h2 id="compatibility"></h2>  
 
 #include "docs/compatibility.md"  
 
 [返回目录](#top)  
 
+---  
+
+## 📜 更新日志
  <h3 id="changelog"></h3>  
  
 #include "docs/changelog.md"  
 
 [返回目录](#top)  
 
-  
+---  
