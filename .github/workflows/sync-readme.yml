@@ -22,10 +22,15 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # 1. 将主文件写入 README.md
           cat README.src.md > README.md
+          
+          # 2. 将更新日志追加到 README.md
           cat docs/changelog.md >> README.md
-          # 删除残留的 {{include ...}} 标记行
-          sed -i '/{{include/d' README.md
+          
+          # 3. 彻底过滤掉残留的 #include 或 {{include 标记行
+          sed -i -E '/^[#]?[[:space:]]*(include|{{include).*/d' README.md
 
       - name: Commit and push if changed
         run: |
@@ -33,6 +38,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to README.md"
           else
-            git commit -m "docs: auto-sync README.md"
+            git commit -m "docs: auto-sync README.md [skip ci]"
             git push
           fi
