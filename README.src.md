@@ -25,18 +25,15 @@
 [返回目录](#top) 
 ---  
 
-## 🧩 兼容性说明  
+  
 <h2 id="compatibility"></h2>  
 
 #include "docs/compatibility.md"  
 
 [返回目录](#top)  
 
----  
-
-## 📜 更新日志
  <h3 id="changelog"></h3>  
- 
+
 #include "docs/changelog.md"  
 
 [返回目录](#top)  
