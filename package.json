@@ -1,10 +1,4 @@
 {
   "name": "dghub-rumble-shock",
-  "private": true,
-  "scripts": {
-    "build:readme": "npx markdown-merge README.src.md > README.md"
-  },
-  "devDependencies": {
-    "markdown-merge": "^3.0.1"
-  }
+  "private": true
 }
