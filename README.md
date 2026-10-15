@@ -12,7 +12,7 @@
 
 [更新日志](#changelog)  
 
-<b id="compatibility"></b>  
+<h2 id="compatibility"></h2>  
 
 ## 兼容性说明  
 
@@ -32,7 +32,7 @@
 
 [返回目录](#top)  
 
- <c id="changelog"></c>  
+ <h3 id="changelog"></h3>  
 
 ## 更新日志    
 __v1.0测试版__    
