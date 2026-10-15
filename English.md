@@ -3,7 +3,7 @@
 > **更改语言为** [中文](README.md)  
 
 **When the gamepad vibrates, the coyote strikes.** Listens to XInput vibration signals, syncs with DGHub in real-time, and drives DG-Lab devices to output immersive feedback.  
-`Source code is located in the "Source Code" branch. Plugin users do not need to download source code. Please go to the latest version's corresponding branch to download the official release package.`  
+`Source code is located in the "源代码分支" branch. Plugin users do not need to download source code. Please go to the latest version's corresponding branch to download the official release package.`  
 `This plugin is for learning and personal entertainment purposes only. Please ensure you use related devices in a legal and safe manner, pay attention to current intensity and usage duration, and avoid accidental injuries.`  
 
 [![Version](https://img.shields.io/badge/version-1.6.0-blue)](https://github.com) [![DGHub](https://img.shields.io/badge/DGHub-v1.8.2%2B-green)](http://www.dghub.top/) [![DGLAB 4.0](https://img.shields.io/badge/DGLAB4.0-v1.0%2B-yellow)](https://dungeon-lab.cn/)
