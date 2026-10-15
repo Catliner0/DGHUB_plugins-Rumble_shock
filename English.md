@@ -1,6 +1,6 @@
 #  🎮 Gamepad Vibration Mapping 
 
-> **Switch to Chinese** [中文](README.md)  
+> **更改语言为** [中文](README.md)  
 
 **When the gamepad vibrates, the coyote strikes.** Listens to XInput vibration signals, syncs with DGHub in real-time, and drives DG-Lab devices to output immersive feedback.  
 `Source code is located in the "Source Code" branch. Plugin users do not need to download source code. Please go to the latest version's corresponding branch to download the official release package.`  
