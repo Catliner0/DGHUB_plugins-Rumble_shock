@@ -23,26 +23,51 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
-          # 使用自带的 Python 3 执行原地展开逻辑
           python3 - <<'EOF'
           import re
           import os
 
-          with open('README.src.md', 'r', encoding='utf-8') as f:
-              content = f.read()
+          # 1. 读取主文件
+          try:
+              with open('README.src.md', 'r', encoding='utf-8') as f:
+                  content = f.read()
+              print("✅ 成功读取 README.src.md")
+          except Exception as e:
+              print(f"❌ 找不到 README.src.md: {e}")
+              exit(1)
 
+          # 2. 定义替换逻辑
           def replace_include(match):
-              filepath = match.group(1)
+              # 提取引号内的文件路径
+              filepath = match.group(1).strip()
+              print(f"\n🔍 尝试展开: {filepath}")
+              
               if os.path.exists(filepath):
                   with open(filepath, 'r', encoding='utf-8') as f:
-                      return f.read()
-              return match.group(0)  # 如果找不到文件，则保留原 include 语句
+                      file_content = f.read()
+                  print(f"   ✅ 成功读取并展开 {filepath} (共 {len(file_content)} 字符)")
+                  return '\n' + file_content + '\n'
+              else:
+                  print(f"   ❌ 找不到文件: {filepath} (请检查大小写和路径)")
+                  return match.group(0)  # 找不到就保留原样
 
-          # 原地替换 #include "路径"
-          new_content = re.sub(r'#\s*include\s+"([^"]+)"', replace_include, content)
+          # 3. 匹配以下所有格式：
+          # #include "docs/changelog.md"
+          # # include "docs/changelog.md"
+          # #include 'docs/changelog.md'
+          new_content, count = re.subn(
+              r'^\s*#\s*include\s+(?:["\']?)([^"\'\n]+)(?:["\']?)', 
+              replace_include, 
+              content, 
+              flags=re.MULTILINE
+          )
 
+          print(f"\n📊 扫描完成：共发现 {count} 处 #include 标记。")
+
+          # 4. 写入最终的 README.md
           with open('README.md', 'w', encoding='utf-8') as f:
               f.write(new_content)
+          print("\n💾 成功生成 README.md")
           EOF
 
       - name: Commit and push if changed
