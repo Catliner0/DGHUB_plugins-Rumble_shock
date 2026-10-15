@@ -16,10 +16,14 @@ jobs:
       contents: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v4  # 彻底升级到 v4，解决强制升级导致崩溃的核心原因
+        uses: actions/checkout@v4
 
       - name: Auto Merge Markdown Files
         run: |
+          # 0. 初始化 Git 配置，防止提交时报错
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
           # 1. 创建一个空的 README.md
           touch README.md
           
@@ -28,17 +32,9 @@ jobs:
           
           # 3. 把 docs/changelog.md 的内容追加到 README.md 后面
           cat docs/changelog.md >> README.md
-          
-          # 4. 打印最终生成的内容，方便检查
-          echo "Generated README.md content:"
-          echo "---"
-          cat README.md
-          echo "---"
 
       - name: Commit and push if changed
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md
           if git diff --cached --quiet; then
             echo "No changes to README.md"
