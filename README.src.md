@@ -1,3 +1,3 @@
 # 手柄震动映射  
-__DGHUB插件__
+__DGHUB插件__  
 #include"docs/changelog.md"  
