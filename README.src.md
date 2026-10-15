@@ -2,4 +2,6 @@
 
 __DGHUB插件__  
 
-#include"docs/changelog.md"  
+#include"docs/changelog.md"    
+
+#include"docs/compatibility.md"  
