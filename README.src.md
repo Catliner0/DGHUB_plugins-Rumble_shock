@@ -15,7 +15,10 @@
 - [插件简介](#about)   
 - [快速部署](#start)  
 - [兼容性说明](#compatibility)   
-- [更新日志](#changelog)    
+- [更新日志](#changelog)  
+
+---    
+  
 <h4 id="about"></h4>  
 
 ## 📖  插件简介  
