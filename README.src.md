@@ -8,13 +8,15 @@
 ---
 <a id="top"></a>   
 # 目录
-[更新日志](#changelog)
+[更新日志](#changelog)  
+[兼容性说明](#compatibility)  
 
  <b id="changelog"></b>  
 #include"docs/changelog.md"  
 
 [返回目录](#top)  
 
+<c id="compatibility"></c>  
 #include"docs/compatibility.md"  
 
 [返回目录](#top)  
