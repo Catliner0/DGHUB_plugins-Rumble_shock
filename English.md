@@ -1,4 +1,4 @@
-#  🎮 Gamepad Vibration Mapping 
+#  🎮 Rumble · Shock   
 
 > **更改语言为** [中文](README.md)  
 
