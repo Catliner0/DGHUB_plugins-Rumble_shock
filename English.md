@@ -1,57 +1,61 @@
-#  🎮 Rumble · Shock   
+#  🎮 Gamepad Vibration Mapping 
 
-> **更改语言为** [中文](README.md)  
+> **切换语言为** [ 中文](README.md)  
 
-**When the gamepad vibrates, the coyote strikes.** Listens to XInput vibration signals, syncs with DGHub in real-time, and drives DG-Lab devices to output immersive feedback.  
-`Source code is located in the "源代码" branch. Plugin users do not need to download source code. Please go to the latest version's corresponding branch to download the official release package.`  
-`This plugin is for learning and personal entertainment purposes only. Please ensure you use related devices in a legal and safe manner, pay attention to current intensity and usage duration, and avoid accidental injuries.`  
+**Gamepad vibrates, Coyote zaps**   
+Leveraging the XInput feature that sends vibration data to gamepads, this tool uses Frida to capture vibration intensity and forwards it to DGHub to control your DG-Lab device.  
+`The source code is located in the "源代码" branch. You do not need to download the source code to use the plugin. Please navigate to the branch corresponding to the latest release to download the official build.`  
+`This plugin is intended solely for learning and personal entertainment. Please ensure you use related devices legally and safely. Pay attention to current intensity and usage duration to avoid accidental injury.`  
 
-[![Version](https://img.shields.io/badge/version-1.6.0-blue)](https://github.com) [![DGHub](https://img.shields.io/badge/DGHub-v1.8.2%2B-green)](http://www.dghub.top/) [![DGLAB 4.0](https://img.shields.io/badge/DGLAB4.0-v4.2.2.a2478e%2B-yellow)](https://dungeon-lab.cn/)
+[![Version](https://img.shields.io/badge/version-1.7.2-blue)](https://github.com) [![DGHub](https://img.shields.io/badge/DGHub-v1.8.2%2B-green)](http://www.dghub.top/) [![DGLAB 4.0](https://img.shields.io/badge/DGLAB4.0-v4.2.2a2478e%2B-yellow)](https://dungeon-lab.cn/)
 
 ---  
 <a id="top"></a>   
-## 📑 Table of Contents
-- [Plugin Introduction](#about)   
-- [Quick Deployment](#start)  
-- [Compatibility Notes](#compatibility)   
-- [Changelog](#changelog)    
+## 📑  Table of Contents
+- [About](#about)   
+- [Quick Start](#start)  
+- [Compatibility](#compatibility)   
+- [Changelog](#changelog)  
+
+---    
+  
 <h4 id="about"></h4>  
 
-## 📖 Plugin Introduction  
+## 📖  About  
 
-This plugin hooks into `XInputSetState` in the game process, retrieves left and right motor vibration intensity in real-time, and maps them to electroshock intensity and waveforms according to your configured rules, sending them via DGHub to connected DG-Lab devices.  
+This plugin hooks into the `XInputSetState` function within the game process to capture real-time left and right motor vibration intensity. It then maps this data to shock intensity and waveforms based on your configured rules, sending the signals via DGHub to connected DG-Lab devices.  
 
-### 🛠️ Prerequisites  
+### 🛠️  Prerequisites  
 | Software | Description | Link |  
 | :--- | :--- | :--- |  
-| **DGHub** | Plugin runtime and device control hub | [Download](http://www.dghub.top/) |  
-| **DG-Lab** | Official device and ecosystem | [Download](https://dungeon-lab.cn/) |  
+| **DGHub** | Plugin runtime & device control hub | [Download](http://www.dghub.top/) |  
+| **DG-Lab** | Official devices & ecosystem | [Download](https://dungeon-lab.cn/) |  
 
 [Back to Top](#top)  
 
 ---  
 <h5 id="start"></h5>  
 
-## 🚀 Quick Deployment  
-**1. Download and Extract**  
+## 🚀  Quick Start  
+**1. Download & Extract**  
 This project is uploaded in split archives. Please download the following files and place them in the same folder:
 
 - `GamepadVibrationMapping.7z.001`
 - `GamepadVibrationMapping.7z.002`
 - `GamepadVibrationMapping.7z.003`
 
-Use 7-Zip, Bandizip, WinRAR or similar to extract. If you encounter extraction issues, you can use the included extractor program `GamepadVibrationMapping.exe` to assist.  
+Extract using 7-Zip, Bandizip, WinRAR, or similar tools. If you encounter extraction issues, you can use the included extractor `GamepadVibrationMapping.exe` to assist.  
 
 **2. Import Plugin**  
-After extraction, locate `main.zip` (the plugin itself), open **DGHub → Plugin Center → External Plugins → Import this zip**  
+After extraction, locate `main.zip` (the plugin itself). Open **DGHub → Plugin Center → External Plugins → Import this zip**.  
 
 **3. Configure Plugin**  
-In `DGHUB` → `Plugin Center` → `External Plugins`, find this plugin. In the plugin configuration page, fill in the **game process name** you want to monitor.  
-`Plugin configuration cannot be modified while running. Please stop the plugin first before making adjustments.`
+Find this plugin in `DGHub` → `Plugin Center` → `External Plugins`. Enter the **game process name** you wish to monitor in the plugin configuration page.   
+`Configuration cannot be modified while the plugin is running. Please stop the plugin before adjusting settings.`
 
-**4. Start Using**  
-Launch the plugin and start the game.  
-**Confirm the game uses XInput gamepad input and disable Steam Input.**
+**4. Start Using**    
+Launch the plugin and start the game.   
+**Ensure the game uses XInput gamepad input and Steam Input is disabled.**
 
 [Back to Top](#top) 
 
@@ -59,18 +63,19 @@ Launch the plugin and start the game.
 
 <h2 id="compatibility"></h2>  
 
-## 🧩 Compatibility Notes   
-In theory, all games that control gamepad vibration via XInput are supported. Actual compatibility varies by game implementation and must be verified individually.  
+## 🧩  Compatibility   
+Theoretically, it supports all games that control gamepad vibration via XInput. Actual compatibility varies by game and is subject to verification.  
 **You must use an XInput-compatible gamepad and disable Steam Input.**
 
 ### Verified Compatible Games
 
-| Game | Process Name | Compatibility | Notes |       
-| :--- | :--- | :--- | :--- |  
-| Outer Wilds | `OuterWilds.exe` | Perfect | None |     
-| Death Stranding Director's Cut | `ds.exe` | Fair | Plugin may be killed when DGHUB runs in background |     
-| Monster Hunter: Rise | `MonsterHunterRise.exe` | Perfect | None |    
-| A Dance of Fire and Ice | `N/A` | Not Supported | Game does not send vibration data to gamepad | 
+| Game | Process Name | Compatibility | Tested Plugin Version | Notes |       
+| :--- | :--- | :--- | :--- | :--- |     
+| Outer Wilds | `OuterWilds.exe`  | Perfect | 1.6.0 | None  |     
+| Death Stranding Director's Cut | `ds.exe` | Fair |  1.6.0| Plugin may be killed if DGHub runs in the background |     
+| Monster Hunter Rise |`MonsterHunterRise.exe` | Perfect | 1.6.0 |  None |    
+| A Dance of Fire and Ice | `N/A` | Not Supported | 1.6.0 | Game does not send vibration data to the gamepad |   
+| Slime Rancher 2 | `SlimeRancher2.exe` | Perfect | 1.7.2 | Compatible from version 1.7.2 onwards |  
 
   
 
@@ -80,29 +85,32 @@ In theory, all games that control gamepad vibration via XInput are supported. Ac
 
  <h3 id="changelog"></h3>  
 
-## 📜 Changelog  
+## 📜  Changelog  
 __v1.0 Beta__    
-> 1. Can handshake with DGHUB and control DG-Lab devices
+>1. Able to handshake with DGHub and control DG-Lab devices
 
 __v1.2.0 Release__  
-> 1. Supports retrieving XInput vibration data sent to gamepad to sync with DG-Lab devices
+>1. Added support for capturing XInput vibration data to synchronize with DG-Lab devices
 
 __v1.2.5 Update__   
-> 1. Fixed bug where configuration changes were not taking effect  
-> 2. Added runtime log support within DGHUB software
+>1. Fixed a bug where configuration settings failed to apply  
+>2. Added runtime logging support within the DGHub software
 
 __v1.5.0 Update__  
-> 1. Supports dual-channel switching  
-> 2. More detailed configuration options  
-> 3. Improved DGHUB runtime logs
+>1. Added dual-channel switching support  
+>2. More detailed configuration options  
+>3. Improved DGHub runtime logging
 
 __v1.6.0 Update__   
-> 1. Officially renamed plugin to "Gamepad Vibration Mapping"  
-> 2. Changed startup behavior: instead of searching for processes only once, the plugin now periodically retries process discovery    
-> 3. Added process search feature to help find game process names (this feature is currently unstable and still in testing)  
+>1. Officially renamed the plugin to "Gamepad Vibration Mapping"  
+>2. Changed startup behavior: previously searched for the process only once; now the plugin periodically retries searching for the process    
+>3. Added a process search feature to help you find the game process name (this feature is currently unstable and still in testing)  
 
+__v1.7.2 Update__   
+>1. Removed the process search feature  
+>2. Added HID DeviceIoControl hooking for vibration data, expanding plugin compatibility   
   
 
 [Back to Top](#top)  
 
----
+---  
