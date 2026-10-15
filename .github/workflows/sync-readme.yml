@@ -1,0 +1,44 @@
+name: Sync README
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/**'
+      - 'README.src.md'
+      - 'build-docs.js'
+      - 'package.json'
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build README
+        run: npm run build:readme
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          if git diff --cached --quiet; then
+            echo "No changes to README.md"
+          else
+            git commit -m "docs: auto-sync README.md"
+            git push
+          fi
