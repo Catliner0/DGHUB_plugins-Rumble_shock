@@ -7,8 +7,10 @@
 
 ---
 <a id="top"></a>   
-# 目录  
- 
+# 目录
+[更新日志](#changelog)
+
+ <b id="changelog"></b>  
 #include"docs/changelog.md"  
 
 [返回目录](#top)  
