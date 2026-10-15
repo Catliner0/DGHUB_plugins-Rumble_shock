@@ -1,6 +1,7 @@
 # 手柄震动映射  
+
 __DGHUB插件__  
-#include"docs/changelog.md"  
+
 ## 更新日志    
 __v1.0测试版__    
 >1.可以与DGHUB握手并控制DGLAB设备
