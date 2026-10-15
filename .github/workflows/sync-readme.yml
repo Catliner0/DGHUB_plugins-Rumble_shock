@@ -23,17 +23,27 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
-          # 1. 主文件写入
-          cat README.src.md > README.md
-          
-          # 2. 追加更新日志
-          cat docs/changelog.md >> README.md
-          
-          # 3. 追加兼容性说明
-          cat docs/compatibility.md >> README.md
-          
-          # 4. 过滤残留的 include 标记
-          sed -i '/include/d' README.md
+          # 使用自带的 Python 3 执行原地展开逻辑
+          python3 - <<'EOF'
+          import re
+          import os
+
+          with open('README.src.md', 'r', encoding='utf-8') as f:
+              content = f.read()
+
+          def replace_include(match):
+              filepath = match.group(1)
+              if os.path.exists(filepath):
+                  with open(filepath, 'r', encoding='utf-8') as f:
+                      return f.read()
+              return match.group(0)  # 如果找不到文件，则保留原 include 语句
+
+          # 原地替换 #include "路径"
+          new_content = re.sub(r'#\s*include\s+"([^"]+)"', replace_include, content)
+
+          with open('README.md', 'w', encoding='utf-8') as f:
+              f.write(new_content)
+          EOF
 
       - name: Commit and push if changed
         run: |
