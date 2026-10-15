@@ -7,27 +7,33 @@ on:
     paths:
       - 'docs/**'
       - 'README.src.md'
-      - 'package.json'
   workflow_dispatch:
 
 jobs:
   sync:
-    runs-on: ubuntu-latest # 使用最新的系统环境
+    runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v5 # 升级到最新的 v5
+      - name: Checkout
+        uses: actions/checkout@v3
 
-      - name: Setup Node
-        uses: actions/setup-node@v5 # 升级到最新的 v5，并自动适配系统版本
-        with:
-          node-version: 'latest' # 让系统自动安装最新的 Node.js
-
-      - name: Install global tool and Build README
+      - name: Auto Merge Markdown Files
         run: |
-          npm install -g markdown-merge # 全局安装合并工具
-          markdown-merge README.src.md > README.md # 执行合并命令
+          # 1. 创建一个空的 README.md
+          touch README.md
+          
+          # 2. 把 README.src.md 的内容写入 README.md
+          cat README.src.md >> README.md
+          
+          # 3. 把 docs/changelog.md 的内容追加到 README.md 后面
+          cat docs/changelog.md >> README.md
+          
+          # 4. 打印最终生成的内容，方便我们在后台检查
+          echo "Generated README.md content:"
+          echo "---"
+          cat README.md
+          echo "---"
 
       - name: Commit and push if changed
         run: |
