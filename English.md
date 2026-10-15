@@ -6,7 +6,7 @@
 `Source code is located in the "源代码分支" branch. Plugin users do not need to download source code. Please go to the latest version's corresponding branch to download the official release package.`  
 `This plugin is for learning and personal entertainment purposes only. Please ensure you use related devices in a legal and safe manner, pay attention to current intensity and usage duration, and avoid accidental injuries.`  
 
-[![Version](https://img.shields.io/badge/version-1.6.0-blue)](https://github.com) [![DGHub](https://img.shields.io/badge/DGHub-v1.8.2%2B-green)](http://www.dghub.top/) [![DGLAB 4.0](https://img.shields.io/badge/DGLAB4.0-v1.0%2B-yellow)](https://dungeon-lab.cn/)
+[![Version](https://img.shields.io/badge/version-1.6.0-blue)](https://github.com) [![DGHub](https://img.shields.io/badge/DGHub-v1.8.2%2B-green)](http://www.dghub.top/) [![DGLAB 4.0](https://img.shields.io/badge/DGLAB4.0-v4.2.2.a2478e%2B-yellow)](https://dungeon-lab.cn/)
 
 ---  
 <a id="top"></a>   
