@@ -16,21 +16,13 @@ jobs:
       contents: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Auto Merge Markdown Files
         run: |
-          # 0. 初始化 Git 配置，防止提交时报错
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          # 1. 创建一个空的 README.md
-          touch README.md
-          
-          # 2. 把 README.src.md 的内容写入 README.md
-          cat README.src.md >> README.md
-          
-          # 3. 把 docs/changelog.md 的内容追加到 README.md 后面
+          cat README.src.md > README.md
           cat docs/changelog.md >> README.md
 
       - name: Commit and push if changed
