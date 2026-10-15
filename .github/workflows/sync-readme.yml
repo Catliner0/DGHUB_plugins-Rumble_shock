@@ -16,7 +16,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4  # 彻底升级到 v4，解决强制升级导致崩溃的核心原因
 
       - name: Auto Merge Markdown Files
         run: |
@@ -29,7 +29,7 @@ jobs:
           # 3. 把 docs/changelog.md 的内容追加到 README.md 后面
           cat docs/changelog.md >> README.md
           
-          # 4. 打印最终生成的内容，方便我们在后台检查
+          # 4. 打印最终生成的内容，方便检查
           echo "Generated README.md content:"
           echo "---"
           cat README.md
