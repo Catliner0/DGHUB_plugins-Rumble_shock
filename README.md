@@ -1,7 +1,8 @@
 #  🎮 手柄震动映射  
 
 **手柄一震动，郊狼就放电。** 监听 XInput 震动信号，实时联动 DGHub，驱动 DG-Lab 设备输出沉浸式反馈。
-
+`源代码位于「源代码分支」。使用插件无需下载源码。请转到最新版本对应分支下载正式发布包。`  
+`本插件仅供学习与个人娱乐使用。请确保在合法、安全的前提下使用相关设备，注意电流强度与使用时长，避免意外伤害。`  
 
 [![Version](https://img.shields.io/badge/version-1.6.0-blue)](https://github.com) [![DGHub](https://img.shields.io/badge/DGHub-v1.8.2%2B-green)](http://www.dghub.top/) [![DGLAB 4.0](https://img.shields.io/badge/DGLAB4.0-v1.0%2B-yellow)](https://dungeon-lab.cn/)
 
