@@ -1,5 +1,5 @@
 # 手柄震动映射  
-__DGHUB插件__
+__DGHUB插件__  
 #include"docs/changelog.md"  
 ## 更新日志    
 __v1.0测试版__    
