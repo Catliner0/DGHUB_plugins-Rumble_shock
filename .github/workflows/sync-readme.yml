@@ -23,11 +23,10 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20.x'
-          cache: 'npm'
+          node-version: '24' # 直接顺应 GitHub 的要求使用 Node.js 24
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install # 改用标准的 npm install，兼容性更强
 
       - name: Build README
         run: npm run build:readme
