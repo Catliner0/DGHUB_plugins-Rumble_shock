@@ -1,0 +1,132 @@
+{
+  "id": "rumble_shock",
+  "name": "手柄震动映射",
+  "version": "1.6.0",
+  "sdk": "1",
+  "author": "Catliner",
+  "description": "监听游戏手柄震动（XInput），实时转换为电击触发。支持手动指定进程或自动扫描列出候选进程。",
+  "homepage": "",
+  "entry": "rumble_shock.exe",
+  "config_schema": [
+    {
+      "section": "进程设置",
+      "fields": [
+        {
+          "key": "process_mode",
+          "type": "select",
+          "label": "进程模式",
+          "default": "manual",
+          "options": [
+            {"label": "手动指定进程名", "value": "manual"},
+            {"label": "自动扫描（仅列出候选）", "value": "auto"}
+          ],
+          "description": "自动模式只会扫描并列出加载了 XInput 的进程，需要你手动复制进程名后切换回手动模式"
+        },
+        {
+          "key": "process_name",
+          "type": "text",
+          "label": "进程名（手动模式）",
+          "default": "OuterWilds.exe",
+          "description": "游戏可执行文件名，例如 OuterWilds.exe。修改后需重启插件"
+        }
+      ]
+    },
+    {
+      "section": "震动检测",
+      "fields": [
+        {
+          "key": "min_rumble",
+          "type": "number",
+          "label": "最小震动阈值",
+          "default": 800,
+          "min": 0,
+          "max": 65535,
+          "step": 1
+        },
+        {
+          "key": "use_max_motor",
+          "type": "bool",
+          "label": "取左右马达最大值",
+          "default": true
+        },
+        {
+          "key": "cooldown",
+          "type": "duration",
+          "label": "冷却时间",
+          "default": 0.45,
+          "min": 0.05,
+          "max": 5,
+          "step": 0.05
+        }
+      ]
+    },
+    {
+      "section": "电击强度",
+      "fields": [
+        {
+          "key": "strength_scale",
+          "type": "number",
+          "label": "强度缩放比例",
+          "default": 75,
+          "min": 1,
+          "max": 200,
+          "step": 1
+        },
+        {
+          "key": "min_level",
+          "type": "percent",
+          "label": "最小电击强度",
+          "default": 20
+        },
+        {
+          "key": "max_level",
+          "type": "percent",
+          "label": "最大电击强度",
+          "default": 95
+        },
+        {
+          "key": "duration",
+          "type": "duration",
+          "label": "持续时间",
+          "default": 0.65,
+          "min": 0.1,
+          "max": 10,
+          "step": 0.05
+        },
+        {
+          "key": "strength_mode",
+          "type": "select",
+          "label": "强度模式",
+          "default": "rollback",
+          "options": [
+            {"label": "回落（临时）", "value": "rollback"},
+            {"label": "永久叠加", "value": "permanent"}
+          ]
+        },
+        {
+          "key": "action",
+          "type": "select",
+          "label": "触发动作",
+          "default": "both",
+          "options": [
+            {"label": "强度 + 波形", "value": "both"},
+            {"label": "仅强度", "value": "strength"},
+            {"label": "仅波形", "value": "waveform"}
+          ]
+        },
+        {
+          "key": "channel",
+          "type": "channel",
+          "label": "通道",
+          "default": "both"
+        },
+        {
+          "key": "preset",
+          "type": "preset",
+          "label": "波形预设",
+          "default": "CS2-受伤"
+        }
+      ]
+    }
+  ]
+}
