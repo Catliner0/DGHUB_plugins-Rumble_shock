@@ -22,8 +22,7 @@
 | **DGHub** | 插件运行与设备控制中枢 | [下载](http://www.dghub.top/) |  
 | **DG-Lab** | 官方设备与生态 | [下载](https://dungeon-lab.cn/) |  
 
-[返回目录](#top) 
----  
+[返回目录](#top)  
 
   
 <h2 id="compatibility"></h2>  
