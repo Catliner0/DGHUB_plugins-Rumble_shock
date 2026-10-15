@@ -6,11 +6,12 @@
 [![Version](https://img.shields.io/badge/version-1.6.0-blue)](https://github.com) [![DGHub](https://img.shields.io/badge/DGHub-v1.8.2%2B-green)](http://www.dghub.top/) [![DGLAB 4.0](https://img.shields.io/badge/DGLAB4.0-v1.0%2B-yellow)](https://dungeon-lab.cn/)
 
 ---
-
+<a id="top"></a>   
 # 目录  
-<a id="top"></a>  
+ 
 
 [返回目录](#top)  
+
 ## 更新日志    
 __v1.0测试版__    
 >1.可以与DGHUB握手并控制DGLAB设备
