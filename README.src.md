@@ -12,13 +12,13 @@
 
 [更新日志](#changelog)  
 
-<b id="compatibility"></b>  
+<h2 id="compatibility"></h2>  
 
 #include "docs/compatibility.md"  
 
 [返回目录](#top)  
 
- <c id="changelog"></c>  
+ <h3 id="changelog"></h3>  
  
 #include "docs/changelog.md"  
 
