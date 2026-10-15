@@ -1,10 +1,10 @@
 {
-  "name": "your-repo",
+  "name": "dghub-rumble-shock",
   "private": true,
   "scripts": {
-    "build:readme": "node build-docs.js"
+    "build:readme": "markdown-merge README.src.md > README.md"
   },
-  "dependencies": {
-    "markdown-include": "^0.4.3"
+  "devDependencies": {
+    "markdown-merge": "^3.0.1"
   }
 }
