@@ -1,0 +1,10 @@
+{
+  "name": "your-repo",
+  "private": true,
+  "scripts": {
+    "build:readme": "node build-docs.js"
+  },
+  "dependencies": {
+    "markdown-include": "^0.4.3"
+  }
+}
