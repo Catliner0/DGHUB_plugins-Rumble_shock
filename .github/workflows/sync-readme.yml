@@ -23,13 +23,16 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
-          # 1. 将主文件写入 README.md
+          # 1. 主文件写入
           cat README.src.md > README.md
           
-          # 2. 将更新日志追加到 README.md
+          # 2. 追加更新日志
           cat docs/changelog.md >> README.md
           
-          # 3. 删除包含 include 标记的行
+          # 3. 追加兼容性说明
+          cat docs/compatibility.md >> README.md
+          
+          # 4. 过滤残留的 include 标记
           sed -i '/include/d' README.md
 
       - name: Commit and push if changed
