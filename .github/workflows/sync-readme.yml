@@ -24,6 +24,8 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           cat README.src.md > README.md
           cat docs/changelog.md >> README.md
+          # 删除残留的 {{include ...}} 标记行
+          sed -i '/{{include/d' README.md
 
       - name: Commit and push if changed
         run: |
