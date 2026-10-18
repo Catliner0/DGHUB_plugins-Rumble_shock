@@ -14,6 +14,7 @@
 | 史莱姆牧场 | `略` | 未知 | 1.7.5 | 该游戏对XBOX手柄支持有误无法在禁用steam输入的情况下使用手柄游玩 |  
 | 史莱姆牧场2 | `SlimeRancher2.exe` | 完美 | 1.7.5 | 1.7.5版本后可兼容 |  
 | 空洞骑士 | `hollow_knight.exe` | 完美 | 1.7.5 | 需在游戏手柄设置里开启震动和XINPUT |  
-| 小小梦魇 | `LittleNightmares.exe` | 完美 | 1.7.5 | 无 |   
+| 小小梦魇 | `LittleNightmares.exe` | 完美 | 1.7.5 | 无 |  
+| 小小梦魇2 | `Little_Nightmares_II_Enhanced-Win64-Shipping.exe` | 完美 | 1.7.5 | 该进程名为强化版 |  
 | 幸福工厂 | `略` | 不支持 | 1.7.5 | 该游戏不支持手柄震动 | 
 | 只狼：影逝二度 | `sekiro.exe` | 完美 | 1.7.5 | 无 |  
