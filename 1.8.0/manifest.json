@@ -1,0 +1,140 @@
+{
+  "id": "rumble_shock",
+  "name": "手柄震动映射",
+  "version": "1.8.1",
+  "sdk": "1",
+  "author": "catliner",
+  "description": "钩取游戏进程XInputS ，将手柄震动映射为电击。使用前请禁用该游戏的 Steam 输入",
+  "entry": "main.exe",
+  "config_schema": [
+    {
+      "section": "进程",
+      "fields": [
+        {
+          "key": "process_name",
+          "type": "text",
+          "label": "目标进程名",
+          "default": "SlimeRancher2.exe",
+          "description": "游戏可执行文件名，修改后需重启插件。"
+        }
+      ]
+    },
+    {
+      "section": "震动映射规则",
+      "fields": [
+        {
+          "key": "min_rumble",
+          "type": "number",
+          "label": "最低震动阈值",
+          "default": 1,
+          "min": 0,
+          "max": 65535,
+          "step": 1,
+          "description": "手柄强度低于此值忽略。调试可先用 1，稳定后建议 200～800。"
+        },
+        {
+          "key": "use_max_motor",
+          "type": "bool",
+          "label": "手柄震动最大值映射",
+          "default": true,
+          "description": "开启：取左右马达最大值；关闭：取平均值。"
+        },
+        {
+          "key": "cooldown",
+          "type": "duration",
+          "label": "电击冷却时间",
+          "default": 0.15,
+          "min": 0,
+          "max": 5,
+          "step": 0.05,
+          "description": "两次电击触发之间的最小间隔（秒）。"
+        }
+      ]
+    },
+    {
+      "section": "电击强度限制",
+      "fields": [
+        {
+          "key": "map_mode",
+          "type": "select",
+          "label": "映射模式",
+          "default": "line",
+          "options": [
+            { "value": "line", "label": "震动比例映射" },
+            { "value": "different", "label": "异常值映射" },
+            { "value": "different_", "label": "异常值映射:与变化幅度相关" }
+          ]
+        },
+        {
+          "key": "strength_scale",
+          "type": "number",
+          "label": "强度缩放倍率",
+          "default": 75,
+          "min": 1,
+          "max": 200,
+          "step": 1,
+          "description": "原始震动按 65535 归一化后再乘此值，得到百分比。"
+        },
+        {
+          "key": "min_level",
+          "type": "percent",
+          "label": "最小电击强度百分比",
+          "default": 10
+        },
+        {
+          "key": "max_level",
+          "type": "percent",
+          "label": "最大电击强度百分比",
+          "default": 95
+        }
+      ]
+    },
+    {
+      "section": "输出模式",
+      "fields": [
+        {
+          "key": "channel",
+          "type": "channel",
+          "label": "通道",
+          "default": "both"
+        },
+        {
+          "key": "strength_mode",
+          "type": "select",
+          "label": "强度模式",
+          "default": "rollback",
+          "options": [
+            { "value": "rollback", "label": "回落" },
+            { "value": "permanent", "label": "永久" }
+          ]
+        },
+        {
+          "key": "action",
+          "type": "select",
+          "label": "映射动作",
+          "default": "both",
+          "options": [
+            { "value": "both", "label": "强度 + 波形" },
+            { "value": "strength", "label": "仅强度" },
+            { "value": "waveform", "label": "仅波形" }
+          ]
+        },
+        {
+          "key": "duration",
+          "type": "duration",
+          "label": "单次电击持续时间",
+          "default": 0.65,
+          "min": 0.1,
+          "max": 10,
+          "step": 0.05
+        },
+        {
+          "key": "preset",
+          "type": "preset",
+          "label": "波形预设",
+          "default": "CS2-受伤"
+        }
+      ]
+    }
+  ]
+}
