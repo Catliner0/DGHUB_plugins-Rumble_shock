@@ -1,4 +1,4 @@
-#V1.7.6  简单重构 本版本未发行
+
 import asyncio
 import json
 import os
