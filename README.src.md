@@ -4,7 +4,7 @@
 
 **手柄一震动，郊狼就放电**   
 利用Xinput向手柄发送震动信息的特性，通过frida来获取手柄震动数据基于此向DGHUB发送信息以控制你的DGLAB产品  
-`源代码位于「源代码分支」。使用插件无需下载源码。请转到最新版本对应分支下载正式发布包`  
+`源代码位于「源代码分支」 使用插件无需下载源码。请转到最新版本对应分支下载正式发布包`  
 `本插件仅供学习与个人娱乐使用。请确保在合法、安全的前提下使用相关设备，注意电流强度与使用时长，避免意外伤害`  
 
 [![Version](https://img.shields.io/badge/version-1.7.2-blue)](https://github.com) [![DGHub](https://img.shields.io/badge/DGHub-v1.8.2%2B-green)](http://www.dghub.top/) [![DGLAB 4.0](https://img.shields.io/badge/DGLAB4.0-v4.2.2a2478e%2B-yellow)](https://dungeon-lab.cn/)
